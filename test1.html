@@ -3,11 +3,58 @@
 <head>
 	<meta charset="UTF-8">
     <title>Example of HTML Hello world</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
     <p>Hello World</p>
 	
 	<hr/>
+	
+	<div id="example">
+      <p>{{ hello }}</p>
+	  
+	  <div v-for="elt in list">
+	  
+		<p v-if="elt.title">{{ elt.title }}</p>
+	  
+		<iframe  width="560" height="315" :src="'https://www.youtube.com/embed/'+elt.youtubeId" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  
+	  </div>
+	  
+	  
+	  
+	  <hr/>
+	  
+    </div>
+	
+	<script>
+        new Vue({
+            el: '#example',
+            data: { 
+			hello: 'Hello World!', 
+			list: [
+      { youtubeId: 'vU8eL2CjzHw', title: '' },
+      { youtubeId: 'ZH6JUqPX8iE', title: '' },
+      { youtubeId: 'aVMkvCTT_yg', title: '' },
+      { youtubeId: 'mTaqUyfV19A', title: '' },
+      { youtubeId: '6LASz6HAL7E', title: '' },
+      { youtubeId: 'ef-Nb3nw9hg', title: '' },
+      { youtubeId: 'vU8eL2CjzHw', title: 'Play list1' },
+      { youtubeId: 'ZH6JUqPX8iE', title: 'Play list2' },
+      { youtubeId: 'rRr19a08mHs', title: '' },
+      { youtubeId: 'ZE5zXLOyEOQ', title: '' },
+      { youtubeId: 'S-jSF-CuIgI', title: '' },
+      { youtubeId: 'IqiTJK_uzUY', title: '' },
+      { youtubeId: '' },
+      { youtubeId: '' },
+      { youtubeId: '' },
+      { youtubeId: '' }
+    ]
+			}
+        })
+    </script>
+	
+	<!--<hr/>
 	
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/vU8eL2CjzHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	
@@ -56,6 +103,7 @@
 	<hr/>
 	
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/IqiTJK_uzUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	-->
 	
 </body>
 </html>
